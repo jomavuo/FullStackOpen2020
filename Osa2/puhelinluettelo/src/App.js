@@ -10,6 +10,8 @@ const App = () => {
   const [persons, setPersons] = useState([])
   const [filterString, setFilterString] = useState('')
   const [message, setMessage] = useState({ text: null, cName: null })
+  const [newName, setNewName] = useState('')
+  const [newNumber, setNewNumber] = useState('')
 
   const hook = () => {
     console.log('effect');
@@ -24,9 +26,7 @@ const App = () => {
 
   const addName = (event) => {
     event.preventDefault()
-    const name = document.getElementById('name').value
-    const number = document.getElementById('number').value
-    const newPerson = { name, number }
+    const newPerson = { name: newName, number: newNumber }
 
     const newPersonisOnTheList = persons.find(person => person.name.toUpperCase() === newPerson.name.toUpperCase())
 
@@ -46,8 +46,11 @@ const App = () => {
         })
       setNotification(`Added ${newPerson.name}`, 'success')
     }
-    document.getElementById('name').value = ''
-    document.getElementById('number').value = ''
+    document.getElementById('name').value = '';
+    document.getElementById('number').value = '';
+
+    setNewName('')
+    setNewNumber('')
   }
 
   const handleFilterChange = (event) => {
@@ -89,6 +92,14 @@ const App = () => {
     }, 5000)
   })
 
+  const onChangeName = (event) => {
+    setNewName(event.target.value)
+  }
+
+  const onChangeNumber = (event) => {
+    setNewNumber(event.target.value)
+  }
+
   const personsToShow = filterString === ''
     ? persons
     : persons.filter(person => person.name.toUpperCase().includes(filterString) || person.number.includes(filterString))
@@ -103,7 +114,7 @@ const App = () => {
 
       <h3>Add a new person</h3>
 
-      <PersonForm onSubmit={addName} />
+      <PersonForm onSubmit={addName} onChangeName={onChangeName} onChangeNumber={onChangeNumber} />
 
       <h3>Numbers</h3>
 
