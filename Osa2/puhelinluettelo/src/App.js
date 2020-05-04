@@ -14,11 +14,9 @@ const App = () => {
   const [newNumber, setNewNumber] = useState('')
 
   const hook = () => {
-    console.log('effect');
     contactService
       .getAll()
       .then(returnedContacts => {
-        console.log('promise fulfilled')
         setPersons(returnedContacts)
       })
   }
@@ -43,8 +41,8 @@ const App = () => {
         .addNew(newPerson)
         .then(returnedPerson => {
           setPersons(persons.concat(returnedPerson))
+          setNotification(`Added ${newPerson.name}`, 'success')
         })
-      setNotification(`Added ${newPerson.name}`, 'success')
     }
     document.getElementById('name').value = '';
     document.getElementById('number').value = '';

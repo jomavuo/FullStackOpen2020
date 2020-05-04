@@ -1,8 +1,6 @@
 import React from 'react';
 
 const PersonForm = ({ onSubmit, onChangeName, onChangeNumber }) => {
-  console.log('PersonForm kutsuttu!');
-    
   return (
       <form onSubmit={onSubmit}>
         <div>name: <input id='name' onChange={onChangeName} /></div>
