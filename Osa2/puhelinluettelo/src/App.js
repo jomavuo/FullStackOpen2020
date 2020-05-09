@@ -43,6 +43,9 @@ const App = () => {
           setPersons(persons.concat(returnedPerson))
           setNotification(`Added ${newPerson.name}`, 'success')
         })
+        .catch(error => {
+          setNotification(`${error.response.data.error}`, 'error')
+        })
     }
     document.getElementById('name').value = '';
     document.getElementById('number').value = '';
@@ -75,11 +78,10 @@ const App = () => {
         setNotification(`Updated ${foundPerson.name}`, 'success')
       })
       .catch(error => {
-        console.log('virhe')
-        setNotification(`Information of ${foundPerson.name} has 
-            already been removed from server`, 'error')
-
-        setPersons(persons.filter(person => person.id !== foundPerson.id))
+        setNotification(`${error.response.data.error}`, 'error');
+        //setNotification(`Information of ${foundPerson.name} has already been removed from server`, 'error')
+        //setPersons(persons.filter(person => person.id !== foundPerson.id))
+        setPersons(persons);
       })
   }
 
