@@ -78,10 +78,14 @@ const App = () => {
         setNotification(`Updated ${foundPerson.name}`, 'success')
       })
       .catch(error => {
-        setNotification(`${error.response.data.error}`, 'error');
         //setNotification(`Information of ${foundPerson.name} has already been removed from server`, 'error')
-        //setPersons(persons.filter(person => person.id !== foundPerson.id))
-        setPersons(persons);
+        // setPersons(persons.filter(person => person.id !== foundPerson.id))
+        setNotification(`${error.response.data.error}`, 'error');
+        contactService
+          .getAll()
+          .then(returnedContacts => {
+            setPersons(returnedContacts)
+          })
       })
   }
 
