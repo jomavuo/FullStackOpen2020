@@ -1,0 +1,9 @@
+PUT http://localhost:3003/api/blogs/5ecfb72e7586afb35621656d
+Content-Type: application/json
+
+{
+  "title": "Learn about deleting",
+  "author": "michael",
+  "url": "www.mcBlog.fi/deleting",
+  "likes": 50
+}

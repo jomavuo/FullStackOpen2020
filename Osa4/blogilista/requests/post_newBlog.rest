@@ -1,0 +1,13 @@
+POST http://localhost:3003/api/blogs/
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI1ZWNlYTcwNDc0ODc0NjU1ZGEwZmNjNjAiLCJpYXQiOjE1OTA2NzA5OTB9.k4Qhz-Ne0lJ2DwRH0g2lQ5IiI-OocAJAHH2He_ZQOGo
+
+{
+    "title": "Learn about testing",
+    "author": "mixu",
+    "url": "www.mixunblogi.fi/testing",
+    "likes": 10
+}
+
+//Hellas: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxhcyIsImlkIjoiNWVjZWE2OTA3NDg3NDY1NWRhMGZjYzVmIiwiaWF0IjoxNTkwNjcxMDUwfQ.QBA9xodYyCS3xIIzOQeKygg5YJZo4J9Hmq_sZrmpryU
+//mluukkai: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI1ZWNlYTcwNDc0ODc0NjU1ZGEwZmNjNjAiLCJpYXQiOjE1OTA2NzA5OTB9.k4Qhz-Ne0lJ2DwRH0g2lQ5IiI-OocAJAHH2He_ZQOGo
