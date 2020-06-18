@@ -3,8 +3,8 @@ Content-Type: application/json
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI1ZWNlYTcwNDc0ODc0NjU1ZGEwZmNjNjAiLCJpYXQiOjE1OTA2NzA5OTB9.k4Qhz-Ne0lJ2DwRH0g2lQ5IiI-OocAJAHH2He_ZQOGo
 
 {
-    "title": "Learn about testing",
-    "author": "mixu",
+    "title": "Test1",
+    "author": "luukkai",
     "url": "www.mixunblogi.fi/testing",
     "likes": 10
 }
