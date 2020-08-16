@@ -25,13 +25,9 @@ const anecdoteReducer = (state = [], action) => {
   console.log('state now: ', state)
   switch (action.type) {
     case 'VOTE':
-      const id = action.data.id
-      const anecdoteVoted = state.find(a => a.id === id)
-      const changedAnecdote = {
-        ...anecdoteVoted, votes: (anecdoteVoted.votes + 1)
-      }
+      const votedAnecdote = action.data
       return state.map(anecdote =>
-        anecdote.id !== id ? anecdote : changedAnecdote)
+        anecdote.id !== votedAnecdote.id ? anecdote : votedAnecdote)
     case 'CREATE_NEW':
       return [...state, action.data]
     case 'INIT_ANECDOTES':
