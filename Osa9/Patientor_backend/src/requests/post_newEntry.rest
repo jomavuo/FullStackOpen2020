@@ -1,0 +1,14 @@
+POST http://localhost:3001/api/patients/d2773c6e-f723-11e9-8f0b-362b9e155667/entries
+Content-Type: application/json
+
+{
+    "description": "Test1",
+    "date": "2019-05-01",
+    "specialist": "Johanna Vuorinen",
+    "type": "OccupationalHealthcare",
+    "employerName": "HY",
+    "sickLeave": {
+        "startDate": "2020-12-12",
+        "endDate": "2020-12-30"
+    }
+}
